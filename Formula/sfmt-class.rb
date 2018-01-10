@@ -8,6 +8,8 @@ class SfmtClass < Formula
 
   def install
     system "cmake", ".", *std_cmake_args
+    system "make"
+    system "ctest", "-V"
     system "make", "install"
 
     lib64 = Pathname.new "#{lib}64"
