@@ -11,13 +11,5 @@ class SfmtClass < Formula
     system "make"
     system "ctest", "-V"
     system "make", "install"
-
-    lib64 = Pathname.new "#{lib}64"
-    if lib64.directory?
-      mkdir lib unless lib.directory?
-      mv Dir[lib64/"*"], lib
-      rmdir lib64
-      prefix.install_symlink lib => lib64
-    end
   end
 end
