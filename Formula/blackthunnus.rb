@@ -1,4 +1,4 @@
-class Tumopp < Formula
+class Blackthunnus < Formula
   desc "🐟 Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/blackthunnus"
   head "https://github.com/heavywatal/blackthunnus.git"
