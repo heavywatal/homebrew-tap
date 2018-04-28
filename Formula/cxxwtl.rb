@@ -13,7 +13,21 @@ class Cxxwtl < Formula
   def install
     system "cmake", ".", *std_cmake_args
     system "make"
-    system "ctest", "-V"
     system "make", "install"
+  end
+
+  test do
+    system "ctest", "-V"
+    (testpath/"test.cpp").write <<~EOS
+      #include <wtl/exception.hpp>
+      #include <wtl/math.hpp>
+
+      int main() {
+          WTL_ASSERT(wtl::factorial(5) == 120);
+          return 0;
+      }
+    EOS
+    system ENV.cxx, "test.cpp", "-I#{include}", "-std=c++14", "-o", "test"
+    system "./test"
   end
 end
