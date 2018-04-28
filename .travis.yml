@@ -9,8 +9,10 @@ matrix:
 before_install:
 - uname -a; sw_vers
 - export HOMEBREW_NO_AUTO_UPDATE=1
-- mkdir -p $(brew --repo $TRAVIS_REPO_SLUG)
-- cp -a . $_
+- BREW_REPO_TAP=$(brew --repo $TRAVIS_REPO_SLUG)
+- echo $BREW_REPO_TAP
+- mkdir -p $BREW_REPO_TAP
+- cp -a . $BREW_REPO_TAP
 script:
 - brew audit --strict cxxwtl sfmt-class
 - brew install cxxwtl sfmt-class
