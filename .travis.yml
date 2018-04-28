@@ -14,8 +14,8 @@ before_install:
 - mkdir -p $BREW_REPO_TAP
 - cp -a . $BREW_REPO_TAP
 script:
-- brew audit --strict cxxwtl sfmt-class
-- brew install cxxwtl sfmt-class
-- brew test cxxwtl sfmt-class
+- brew audit --strict Formula/*.rb
+- brew install tumopp blackthunnus
+- brew test sfmt-class cxxwtl tumopp blackthunnus
 notifications:
   email: false
