@@ -11,7 +11,7 @@ class SfmtClass < Formula
   def install
     system "git", "clone", "--depth=1", "https://github.com/MersenneTwister-Lab/SFMT.git"
     system "cmake", ".", *std_cmake_args
-    system "make"
+    system "make", "-j#{ENV.make_jobs}"
     system "make", "install"
   end
 

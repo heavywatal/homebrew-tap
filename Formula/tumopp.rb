@@ -13,7 +13,7 @@ class Tumopp < Formula
 
   def install
     system "cmake", ".", *std_cmake_args
-    system "make"
+    system "make", "-j#{ENV.make_jobs}"
     system "make", "install"
   end
 
