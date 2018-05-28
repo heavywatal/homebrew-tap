@@ -1,4 +1,3 @@
-# coding: utf-8
 class Tumopp < Formula
   desc "🦀 Tumor growth simulation in C++"
   homepage "https://github.com/heavywatal/tumopp"
