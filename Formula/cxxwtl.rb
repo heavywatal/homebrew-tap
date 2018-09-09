@@ -6,8 +6,10 @@ class Cxxwtl < Formula
   head "https://github.com/heavywatal/cxxwtl.git"
 
   depends_on "cmake" => :build
-  depends_on "boost" => :recommended
+  depends_on "boost" => :optional
   depends_on "eigen" => :optional
+  depends_on "nlohmann/json/nlohmann_json" => :optional
+  depends_on "heavywatal/tap/clipp" => :optional
   needs :cxx14
 
   def install
@@ -26,7 +28,7 @@ class Cxxwtl < Formula
           WTL_ASSERT(wtl::factorial(5) == 120);
           return 0;
       }
-    EOS
+      EOS
     system ENV.cxx, "test.cpp", "-I#{include}", "-std=c++14", "-o", "test"
     system "./test"
   end
