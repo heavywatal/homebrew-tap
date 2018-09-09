@@ -23,13 +23,13 @@ class SfmtClass < Formula
 
       int main() {
           std::random_device seeder;
-          wtl::sfmt19937 engine(seeder());
+          wtl::sfmt19937 engine(seeder{});
           std::normal_distribution<double> normal(0.0, 1.0);
           double x = normal(engine);
           return 0;
       }
       EOS
-    system ENV.cxx, "test.cpp", "-I#{include}", "-lsfmt", "-std=c++14", "-o", "test"
+    system ENV.cxx, "test.cpp", "-I#{include}", "-lsfmt", "-std=c++11", "-o", "test"
     system "./test"
   end
 end

@@ -1,5 +1,5 @@
 class Clipp < Formula
-  desc "Expressive command line argument parsing for modern C++"
+  desc "Expressive command-line argument parsing for modern C++"
   homepage "https://github.com/muellan/clipp"
   url "https://github.com/heavywatal/clipp/archive/v1.2.0.1.tar.gz"
   sha256 "cbe6b841a23b06c97f6eefd5c41bccce100cc48988c84360fdab7a0e50a5cdd9"
