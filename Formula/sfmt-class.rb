@@ -23,7 +23,7 @@ class SfmtClass < Formula
 
       int main() {
           std::random_device seeder;
-          wtl::sfmt19937 engine(seeder{});
+          wtl::sfmt19937 engine(seeder());
           std::normal_distribution<double> normal(0.0, 1.0);
           double x = normal(engine);
           return 0;
