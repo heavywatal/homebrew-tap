@@ -8,17 +8,18 @@ class Cxxwtl < Formula
   depends_on "cmake" => :build
   depends_on "boost" => :optional
   depends_on "eigen" => :optional
-  depends_on "nlohmann/json/nlohmann_json" => :optional
   needs :cxx14
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "-j#{ENV.make_jobs}"
-    system "make", "install"
+    mkdir "build" do
+      cmake_args = std_cmake_args
+      cmake_args << "-DBUILD_TESTING=0" << ".."
+      system "cmake", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
-    system "ctest", "-V"
     (testpath/"test.cpp").write <<~EOS
       #include <wtl/exception.hpp>
       #include <wtl/math.hpp>
@@ -28,7 +29,7 @@ class Cxxwtl < Formula
           return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{include}", "-std=c++14", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-o", "test"
     system "./test"
   end
 end

@@ -3,7 +3,6 @@ sudo: false
 matrix:
   include:
   - os: osx
-    osx_image: xcode9.3
   - os: osx
     osx_image: xcode8.3
 before_install:
@@ -15,8 +14,8 @@ before_install:
 - cp -a . $BREW_REPO_TAP
 script:
 - brew audit --strict Formula/*.rb
-- brew install tumopp blackthunnus
-- brew test sfmt-class cxxwtl tumopp blackthunnus
+- brew install clippson cxxwtl sfmt-class blackthunnus tumopp
+- brew test -v clippson cxxwtl sfmt-class blackthunnus tumopp
 notifications:
   email: false
   slack:

@@ -39,7 +39,7 @@ class Clippson < Formula
           return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{include}", "-std=c++11", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
     system "./test"
   end
 end

@@ -13,12 +13,28 @@ class Blackthunnus < Formula
   needs :cxx14
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "-j#{ENV.make_jobs}"
-    system "make", "install"
+    mkdir "build" do
+      cmake_args = std_cmake_args
+      cmake_args << "-DBUILD_TESTING=0" << ".."
+      system "cmake", *cmake_args
+      system "make", "-j#{ENV.make_jobs}"
+      system "make", "install"
+    end
   end
 
   test do
-    system "ctest", "-V"
+    system bin/"blackthunnus", "--quiet"
+    (testpath/"test.cpp").write <<~EOS
+      #include <blackthunnus/program.hpp>
+
+      int main(int argc, char* argv[]) {
+          std::vector<std::string> args(argv, argv + argc);
+          pbt::Program program(args);
+          program.run();
+          return 0;
+      }
+    EOS
+    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lblackthunnus", "-o", "test"
+    system "./test", "--quiet"
   end
 end

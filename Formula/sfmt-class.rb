@@ -9,14 +9,19 @@ class SfmtClass < Formula
   needs :cxx11
 
   def install
-    system "git", "clone", "--depth=1", "https://github.com/MersenneTwister-Lab/SFMT.git"
-    system "cmake", ".", *std_cmake_args
-    system "make", "-j#{ENV.make_jobs}"
-    system "make", "install"
+    unless File.exist?("SFMT/.git")
+      system "git", "clone", "--depth=1", "https://github.com/MersenneTwister-Lab/SFMT.git"
+    end
+    mkdir "build" do
+      cmake_args = std_cmake_args
+      cmake_args << "-DBUILD_TESTING=0" << ".."
+      system "cmake", *cmake_args
+      system "make", "-j#{ENV.make_jobs}"
+      system "make", "install"
+    end
   end
 
   test do
-    system "ctest", "-V"
     (testpath/"test.cpp").write <<~EOS
       #include <sfmt.hpp>
       #include <random>
@@ -28,8 +33,8 @@ class SfmtClass < Formula
           double x = normal(engine);
           return 0;
       }
-      EOS
-    system ENV.cxx, "test.cpp", "-I#{include}", "-lsfmt", "-std=c++11", "-o", "test"
+    EOS
+    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lsfmt", "-o", "test"
     system "./test"
   end
 end

@@ -12,12 +12,28 @@ class Tumopp < Formula
   needs :cxx14
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "-j#{ENV.make_jobs}"
-    system "make", "install"
+    mkdir "build" do
+      cmake_args = std_cmake_args
+      cmake_args << "-DBUILD_TESTING=0" << ".."
+      system "cmake", *cmake_args
+      system "make", "-j#{ENV.make_jobs}"
+      system "make", "install"
+    end
   end
 
   test do
-    system "ctest", "-V"
+    system bin/"tumopp"
+    (testpath/"test.cpp").write <<~EOS
+      #include <tumopp/simulation.hpp>
+
+      int main(int argc, char* argv[]) {
+          std::vector<std::string> arguments(argv + 1, argv + argc);
+          tumopp::Simulation simulation(arguments);
+          simulation.run();
+          return 0;
+      }
+    EOS
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{lib}", "-ltumopp", "-o", "test"
+    system "./test"
   end
 end
