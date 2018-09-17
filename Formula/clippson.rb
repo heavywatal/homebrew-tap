@@ -31,8 +31,8 @@ class Clippson < Formula
           int whoami = 24601;
           nlohmann::json vm;
           auto cli = (
-            wtl::option(vm, {"-h", "--help"}, false),
-            wtl::option(vm, {"--whoami"}, 24601)
+            wtl::option(&vm, {"h", "help"}, false),
+            wtl::option(&vm, {"whoami"}, 24601)
           );
           if (!clipp::parse(argc, argv, cli)) return 1;
           std::cout << vm.dump(2) << std::endl;
