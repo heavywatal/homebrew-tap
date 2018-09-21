@@ -1,15 +1,14 @@
 class Blackthunnus < Formula
   desc "🐟 Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/blackthunnus"
-  url "https://github.com/heavywatal/blackthunnus/archive/v0.1.10.tar.gz"
-  sha256 "b40d812e3e7a7ea8a2ef22fbc9a57f1bb4840f325226b35e421cdfeff02a5861"
+  url "https://github.com/heavywatal/blackthunnus/archive/v0.2.0.tar.gz"
+  sha256 "e3e8577bc88cf28f3d60bd0d57cb6265d53e9146213ad74d4c8b161118574668"
   head "https://github.com/heavywatal/blackthunnus.git"
 
   depends_on "cmake" => :build
+  depends_on "clippson"
   depends_on "cxxwtl"
   depends_on "sfmt-class"
-  depends_on "nlohmann/json/nlohmann_json"
-  depends_on "boost"
   needs :cxx14
 
   def install
@@ -28,7 +27,7 @@ class Blackthunnus < Formula
       #include <blackthunnus/program.hpp>
 
       int main(int argc, char* argv[]) {
-          std::vector<std::string> args(argv, argv + argc);
+          std::vector<std::string> args(argv + 1, argv + argc);
           pbt::Program program(args);
           program.run();
           return 0;
