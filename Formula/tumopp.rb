@@ -1,14 +1,14 @@
 class Tumopp < Formula
   desc "🦀 Tumor growth simulation in C++"
   homepage "https://github.com/heavywatal/tumopp"
-  url "https://github.com/heavywatal/tumopp/archive/v0.6.0.tar.gz"
-  sha256 "e48ada833055da9e93ceed75cba52a2d5a1d371a815218f87682ab9d3f27124f"
+  url "https://github.com/heavywatal/tumopp/archive/v0.6.1.tar.gz"
+  sha256 "814e6bebef0a876f736453bfc96360da075826a43b00d11570dcc501c9ef19ef"
   head "https://github.com/heavywatal/tumopp.git"
 
   depends_on "cmake" => :build
   depends_on "clippson"
   depends_on "cxxwtl"
-  depends_on "sfmt-class"
+  depends_on "sfmt-class" => :optional
   needs :cxx14
 
   def install
