@@ -1,8 +1,8 @@
 class Clippson < Formula
   desc "📎 Helper library of clipp, command-line parser for C++"
   homepage "https://github.com/heavywatal/clippson"
-  url "https://github.com/heavywatal/clippson/archive/v0.7.0.tar.gz"
-  sha256 "42e48101c8e96c32c08f9a14283f88f70830c919131c2b5056ec61ad63fe7c67"
+  url "https://github.com/heavywatal/clippson/archive/v0.7.3.tar.gz"
+  sha256 "9d074a9aae186744c6266bade8632ad06d14bbb841fd997ad1b26458e1688221"
   head "https://github.com/heavywatal/clippson.git"
 
   depends_on "cmake" => :build
