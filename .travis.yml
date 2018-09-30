@@ -6,7 +6,6 @@ matrix:
   - os: osx
     osx_image: xcode8.3
 before_install:
-- uname -a; sw_vers
 - export HOMEBREW_NO_AUTO_UPDATE=1
 - BREW_REPO_TAP=$(brew --repo $TRAVIS_REPO_SLUG)
 - echo $BREW_REPO_TAP
@@ -14,8 +13,12 @@ before_install:
 - cp -a . $BREW_REPO_TAP
 script:
 - brew audit --strict Formula/*.rb
-- brew install clippson cxxwtl sfmt-class blackthunnus tumopp
-- brew test -v clippson cxxwtl sfmt-class blackthunnus tumopp
+- brew_install_test() { brew install $1 && brew test -v $1; }
+- brew_install_test(cxxwtl)
+- brew_install_test(clippson)
+- brew_install_test(sfmt-class)
+- brew_install_test(tumopp)
+- brew_install_test(blackthunnus)
 notifications:
   email: false
   slack:
