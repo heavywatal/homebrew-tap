@@ -1,14 +1,14 @@
 class Blackthunnus < Formula
   desc "🐟 Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/blackthunnus"
-  url "https://github.com/heavywatal/blackthunnus/archive/v0.2.0.tar.gz"
-  sha256 "e3e8577bc88cf28f3d60bd0d57cb6265d53e9146213ad74d4c8b161118574668"
+  url "https://github.com/heavywatal/blackthunnus/archive/v0.3.0.tar.gz"
+  sha256 "82360308d55f9ae5b8158980a00bfa8fc67d0d2d3122e2810eeb45b0f6fdaddb"
   head "https://github.com/heavywatal/blackthunnus.git"
 
   depends_on "cmake" => :build
   depends_on "clippson"
   depends_on "cxxwtl"
-  depends_on "sfmt-class"
+  depends_on "sfmt-class" => :optional
   needs :cxx14
 
   def install
