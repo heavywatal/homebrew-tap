@@ -14,11 +14,11 @@ before_install:
 script:
 - brew audit --strict Formula/*.rb
 - brew_install_test() { brew install $1 && brew test -v $1; }
-- brew_install_test(cxxwtl)
-- brew_install_test(clippson)
-- brew_install_test(sfmt-class)
-- brew_install_test(tumopp)
-- brew_install_test(blackthunnus)
+- brew_install_test cxxwtl
+- brew_install_test clippson
+- brew_install_test sfmt-class
+- brew_install_test tumopp
+- brew_install_test blackthunnus
 notifications:
   email: false
   slack:
