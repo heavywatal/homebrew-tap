@@ -1,8 +1,8 @@
 class Cxxwtl < Formula
   desc "🤘 wtl: Personal C++ header library"
   homepage "https://github.com/heavywatal/cxxwtl"
-  url "https://github.com/heavywatal/cxxwtl/archive/v0.7.3.tar.gz"
-  sha256 "8af86a3985d40f22fe590c06bb36b1957459515446b2a2f4948a2d6481400ec2"
+  url "https://github.com/heavywatal/cxxwtl/archive/v0.7.4.tar.gz"
+  sha256 "3529e05acedd4fd09d68c99e763e7a19c554aa12415cc6efe8efae9f3d533fe0"
   head "https://github.com/heavywatal/cxxwtl.git"
 
   depends_on "cmake" => :build
