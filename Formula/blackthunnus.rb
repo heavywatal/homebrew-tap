@@ -34,6 +34,6 @@ class Blackthunnus < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lblackthunnus", "-o", "test"
-    system "./test", "--quiet"
+    system "./test"
   end
 end
