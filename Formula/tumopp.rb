@@ -9,7 +9,6 @@ class Tumopp < Formula
   depends_on "clippson"
   depends_on "cxxwtl"
   depends_on "sfmt-class" => :optional
-  needs :cxx14
 
   def install
     mkdir "build" do

@@ -6,7 +6,6 @@ class SfmtClass < Formula
   head "https://github.com/heavywatal/sfmt-class.git"
 
   depends_on "cmake" => :build
-  needs :cxx11
 
   def install
     unless File.exist?("SFMT/.git")

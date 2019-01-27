@@ -8,7 +8,6 @@ class Cxxwtl < Formula
   depends_on "cmake" => :build
   depends_on "boost" => :optional
   depends_on "eigen" => :optional
-  needs :cxx14
 
   def install
     mkdir "build" do

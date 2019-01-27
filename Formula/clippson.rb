@@ -6,7 +6,6 @@ class Clippson < Formula
   head "https://github.com/heavywatal/clippson.git"
 
   depends_on "cmake" => :build
-  needs :cxx11
 
   def install
     unless File.exist?("clipp/.git")
