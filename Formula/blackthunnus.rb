@@ -1,8 +1,8 @@
 class Blackthunnus < Formula
   desc "🐟 Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/blackthunnus"
-  url "https://github.com/heavywatal/blackthunnus/archive/v0.4.1.tar.gz"
-  sha256 "1c76b34f46ded399b67d2500f6f88e323f1b469bba699d48a17aba1ed14ced34"
+  url "https://github.com/heavywatal/blackthunnus/archive/v0.4.2.tar.gz"
+  sha256 "ceea0d93eb05218823a69993494ca1395203b2fc5ebbfd9f648fcbe4b9a80a56"
   head "https://github.com/heavywatal/blackthunnus.git"
 
   depends_on "cmake" => :build
