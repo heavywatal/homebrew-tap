@@ -17,7 +17,7 @@ script:
 - brew_install_test clippson
 - brew_install_test sfmt-class
 - brew_install_test tumopp
-- brew_install_test blackthunnus
+- brew_install_test tekka
 notifications:
   email: false
   slack:
