@@ -27,7 +27,7 @@ class Tekka < Formula
 
       int main(int argc, char* argv[]) {
           std::vector<std::string> args(argv + 1, argv + argc);
-          pbt::Program program(args);
+          pbf::Program program(args);
           program.run();
           return 0;
       }
