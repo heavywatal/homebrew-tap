@@ -1,8 +1,8 @@
 class Cxxwtl < Formula
   desc "🤘 wtl: Personal C++ header library"
   homepage "https://github.com/heavywatal/cxxwtl"
-  url "https://github.com/heavywatal/cxxwtl/archive/v0.8.2.tar.gz"
-  sha256 "7ddb307739817b71ad205c519cf2dc6957b79af34ff50efb4fe3c403a86b0df6"
+  url "https://github.com/heavywatal/cxxwtl/archive/v0.8.3.tar.gz"
+  sha256 "d9b90654757ffc623e61a880ab7de7e3ce28f0f1c1b5ada52c9f95ed83d40982"
   head "https://github.com/heavywatal/cxxwtl.git"
 
   depends_on "cmake" => :build
@@ -11,8 +11,7 @@ class Cxxwtl < Formula
 
   def install
     mkdir "build" do
-      cmake_args = std_cmake_args
-      cmake_args << "-DBUILD_TESTING=0" << ".."
+      cmake_args = std_cmake_args << ".."
       system "cmake", *cmake_args
       system "make", "install"
     end
