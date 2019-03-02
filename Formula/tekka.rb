@@ -13,7 +13,7 @@ class Tekka < Formula
   def install
     mkdir "build" do
       cmake_args = std_cmake_args
-      cmake_args << "-DBUILD_TESTING=0" << ".."
+      cmake_args << "-DBUILD_TESTING=OFF" << ".."
       system "cmake", *cmake_args
       system "make", "-j#{ENV.make_jobs}"
       system "make", "install"
