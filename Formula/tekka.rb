@@ -1,8 +1,8 @@
 class Tekka < Formula
   desc "🐟 Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/tekka"
-  url "https://github.com/heavywatal/tekka/archive/v0.5.6.tar.gz"
-  sha256 "61eb80fae742fda4a04c468f9e31671a16e8016687334ff32ec053a5f480c79d"
+  url "https://github.com/heavywatal/tekka/archive/v0.5.7.tar.gz"
+  sha256 "51b7e7c29d029832146679c860f766b29337fd23577069474c9013b21e6c80cc"
   head "https://github.com/heavywatal/tekka.git"
 
   depends_on "cmake" => :build
@@ -21,7 +21,7 @@ class Tekka < Formula
   end
 
   test do
-    system bin/"tekka", "--quiet"
+    system bin/"tekka"
     (testpath/"test.cpp").write <<~EOS
       #include <tekka/program.hpp>
 
