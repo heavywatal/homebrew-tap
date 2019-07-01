@@ -8,8 +8,8 @@ before_install:
 - export HOMEBREW_NO_AUTO_UPDATE=1
 - BREW_REPO_TAP=$(brew --repo $TRAVIS_REPO_SLUG)
 - echo $BREW_REPO_TAP
-- mkdir -p $BREW_REPO_TAP
-- cp -a . $BREW_REPO_TAP
+- mkdir -p $(dirname $BREW_REPO_TAP)
+- ln -s $PWD $BREW_REPO_TAP
 script:
 - brew audit --strict Formula/*.rb
 - brew_install_test() { brew install $1 && brew test -v $1; }
