@@ -1,8 +1,8 @@
 class Tumopp < Formula
   desc "🦀 Tumor growth simulation in C++"
   homepage "https://github.com/heavywatal/tumopp"
-  url "https://github.com/heavywatal/tumopp/archive/v0.8.2.tar.gz"
-  sha256 "7c3be45c3ba8bc6c2bafc531bec8a4550e4f7c831edb3859cee12863bb634357"
+  url "https://github.com/heavywatal/tumopp/archive/v0.8.3.tar.gz"
+  sha256 "bb1d39bea26a134c492b8c00bbfbd98b8b1a306eb7572ed17de1ac44c3bc3b9c"
   head "https://github.com/heavywatal/tumopp.git"
 
   depends_on "cmake" => :build
