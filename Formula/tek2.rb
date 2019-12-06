@@ -1,8 +1,8 @@
 class Tek2 < Formula
   desc "🌽 Population Genetic Simulation Framework of Transposable Elements"
   homepage "https://github.com/heavywatal/tek2"
-  url "https://github.com/heavywatal/tek2/archive/v0.2.0.tar.gz"
-  sha256 "1f00d82b84077157ce224f50b578927624d5668b3d7bab78cfed4d8eb93e8dbd"
+  url "https://github.com/heavywatal/tek2/archive/v0.2.1.tar.gz"
+  sha256 "6de9bce36d2b363ba8d2f9752a1568f029938b8ba2aed0f98c95d86c23e58420"
   head "https://github.com/heavywatal/tek2.git"
 
   depends_on "cmake" => :build
