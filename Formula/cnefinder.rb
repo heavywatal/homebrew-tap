@@ -1,15 +1,15 @@
 class Cnefinder < Formula
   desc "CNEFinder: Finding Conserved Non-coding Elements in Genomes"
   homepage "https://github.com/lorrainea/CNEFinder"
-  url "https://github.com/heavywatal/CNEFinder/archive/v0.1.0.tar.gz"
-  sha256 "ceee691f586682cb8bd2a904f3fb598bdcb6ceb88ecf4ad61c668cc724ed7c53"
+  url "https://github.com/heavywatal/CNEFinder/archive/v0.1.1.tar.gz"
+  sha256 "19adaf43f30ede4d1c243fbf04f67cc9711c640047a519c2f265d067b38a682d"
   head "https://github.com/heavywatal/CNEFinder.git"
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "libomp"
 
-  fails_with :gcc => "5"
+  fails_with gcc: "5"
 
   def install
     mkdir "build" do
