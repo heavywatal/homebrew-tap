@@ -1,0 +1,45 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+name: $GITHUB_REPOSITORY
+
+env:
+  HOMEBREW_NO_ANALYTICS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    steps:
+      - uses: actions/checkout@master
+      - uses: jonchang/audit-action@master
+  install-test:
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }}
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest}
+          - {os: ubuntu-latest}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        run: |
+          mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
+          cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
+          brew_install_test() { brew install $1 && brew test -v $1; }
+          brew_install_test cxxwtl
+          brew_install_test clippson
+          brew_install_test sfmt-class
+          brew_install_test tumopp
+          brew_install_test tekka
+          brew_install_test tek2
