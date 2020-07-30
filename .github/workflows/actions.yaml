@@ -6,7 +6,7 @@ on:
     branches:
       - master
 
-name: $GITHUB_REPOSITORY
+name: brew audit, install, test
 
 env:
   HOMEBREW_NO_ANALYTICS: 1
