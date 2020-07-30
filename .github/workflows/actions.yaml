@@ -6,7 +6,7 @@ on:
     branches:
       - master
 
-name: brew audit, install, test
+name: brew-test
 
 env:
   HOMEBREW_NO_ANALYTICS: 1
