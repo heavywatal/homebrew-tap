@@ -15,8 +15,13 @@ env:
 
 jobs:
   audit:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.os }}
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macOS-latest, ubuntu-latest]
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -31,23 +36,9 @@ jobs:
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
-      - name: Run test-bot and audit
-        run: |
-          brew test-bot --only-cleanup-before
-          brew test-bot --only-setup
-          brew audit --strict --formula --tap heavywatal/tap
-  install-test:
-    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }}
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {os: macOS-latest}
-          - {os: ubuntu-latest}
-    steps:
-      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Audit
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: brew audit --strict --formula --tap $GITHUB_REPOSITORY
       - name: Test
         run: |
           brew_install_test() { brew install $1 && brew test -v $1; }
