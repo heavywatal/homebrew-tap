@@ -23,6 +23,7 @@ class Igvtools < Formula
 
   test do
     assert_match "Usage:", shell_output("#{bin}/igvtools")
-    assert_match "org/broad/igv/ui/IGV.class", shell_output("#{Formula["openjdk@11"].bin}/jar tf #{libexec}/lib/igv.jar")
+    assert_match "org/broad/igv/ui/IGV.class",
+                 shell_output("#{Formula["openjdk@11"].bin}/jar tf #{libexec}/lib/igv.jar")
   end
 end
