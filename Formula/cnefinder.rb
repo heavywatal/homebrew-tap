@@ -1,5 +1,5 @@
 class Cnefinder < Formula
-  desc "CNEFinder: Finding Conserved Non-coding Elements in Genomes"
+  desc "Finding Conserved Non-coding Elements in Genomes"
   homepage "https://github.com/lorrainea/CNEFinder"
   url "https://github.com/heavywatal/CNEFinder/archive/v0.1.1.tar.gz"
   sha256 "19adaf43f30ede4d1c243fbf04f67cc9711c640047a519c2f265d067b38a682d"

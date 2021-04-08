@@ -36,9 +36,11 @@ jobs:
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
-      - name: Audit
+      - name: Audit/Style
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: brew audit --strict --formula --tap $GITHUB_REPOSITORY
+        run: |
+          brew audit --strict --formula --tap $GITHUB_REPOSITORY
+          brew style --formula $GITHUB_REPOSITORY
       - name: Test
         run: |
           brew_install_test() { brew install $1 && brew test -v $1; }
