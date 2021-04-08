@@ -18,8 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
-      - uses: actions/checkout@master
-      - uses: jonchang/audit-action@master
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Cache Homebrew Bundler RubyGems
+        id: cache
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+      - name: Install Homebrew Bundler RubyGems
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: brew install-bundler-gems
+      - name: Run test-bot and audit
+        run: |
+          brew test-bot --only-cleanup-before
+          brew test-bot --only-setup
+          brew audit --strict --formula --tap heavywatal/tap
   install-test:
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.os }}
@@ -31,11 +45,9 @@ jobs:
           - {os: macOS-latest}
           - {os: ubuntu-latest}
     steps:
-      - uses: actions/checkout@v2
+      - uses: Homebrew/actions/setup-homebrew@master
       - name: Test
         run: |
-          mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
-          cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           brew_install_test() { brew install $1 && brew test -v $1; }
           brew_install_test cxxwtl
           brew_install_test clippson
