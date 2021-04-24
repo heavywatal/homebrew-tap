@@ -2,7 +2,7 @@ cask "font-source-sans-3" do
   version "3.028"
   sha256 "1186d594ecb1336679a1d102bb6ddbe6041f0fd029482e53f02e46aa3ab011cf"
 
-  url "https://github.com/adobe-fonts/source-sans/releases/download/#{version}R/source-sans-#{version.sub(/\./, "v")}R.zip"
+  url "https://github.com/adobe-fonts/source-sans/releases/download/#{version}R/source-sans-#{version.major}v#{version.minor}R.zip"
   name "Source Sans 3"
   desc "Fonts designed for user interfaces"
   homepage "https://github.com/adobe-fonts/source-sans"
