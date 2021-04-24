@@ -39,8 +39,8 @@ jobs:
       - name: Audit/Style
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
-          brew audit --strict --formula --tap $GITHUB_REPOSITORY
-          brew style --formula $GITHUB_REPOSITORY
+          brew audit --strict --tap $GITHUB_REPOSITORY
+          brew style $GITHUB_REPOSITORY
       - name: Test
         run: |
           brew_install_test() { brew install $1 && brew test -v $1; }
