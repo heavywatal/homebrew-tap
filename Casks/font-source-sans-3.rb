@@ -1,8 +1,8 @@
 cask "font-source-sans-3" do
-  version "3.028"
-  sha256 "1186d594ecb1336679a1d102bb6ddbe6041f0fd029482e53f02e46aa3ab011cf"
+  version "3.046"
+  sha256 "ed03cdb943892e60ebb7f63f1ec8d826722923f7f65dd9f01fe99ce7a04b8cb8"
 
-  url "https://github.com/adobe-fonts/source-sans/releases/download/#{version}R/source-sans-#{version.major}v#{version.minor}R.zip"
+  url "https://github.com/adobe-fonts/source-sans/releases/download/#{version}R/OTF-source-sans-#{version}R.zip"
   name "Source Sans 3"
   desc "Fonts designed for user interfaces"
   homepage "https://github.com/adobe-fonts/source-sans"
@@ -25,6 +25,4 @@ cask "font-source-sans-3" do
   font "OTF/SourceSans3-Regular.otf"
   font "OTF/SourceSans3-Semibold.otf"
   font "OTF/SourceSans3-SemiboldIt.otf"
-  font "VAR/SourceSans3VF-Italic.otf"
-  font "VAR/SourceSans3VF-Roman.otf"
 end
