@@ -1,8 +1,8 @@
 cask "font-source-han-serif" do
-  version "1.001"
-  sha256 "85cc634fa228286ca307803bbb4ca61f61fa821b3ed573f4f07c6f0c064426b5"
+  version "2.000"
+  sha256 "443832c1a6fb8304fe6013bb175289bca3afd04ff7fbb662fe9425f940ec19c3"
 
-  url "https://github.com/adobe-fonts/source-han-serif/releases/download/#{version}R/SourceHanSerif.ttc"
+  url "https://github.com/adobe-fonts/source-han-serif/releases/download/#{version}R/SourceHanSerif.ttc.zip"
   name "Source Han Serif"
   name "思源宋體"
   name "源ノ明朝"
