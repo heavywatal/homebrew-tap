@@ -3,9 +3,7 @@ class Phast < Formula
   homepage "http://compgen.cshl.edu/phast/"
   url "https://github.com/heavywatal/phast/archive/refs/tags/v1.6.tar.gz"
   sha256 "8100f6582008c5de46d2de05cee038f0f1ca3a50147031da1bc5e8744883cbe4"
-  head "https://github.com/heavywatal/phast.git"
-
-  depends_on "clapack" if OS.linux?
+  head "https://github.com/heavywatal/phast.git", branch: "dev"
 
   def install
     inreplace "src/Makefile", "${PWD}", "#{buildpath}/src"
