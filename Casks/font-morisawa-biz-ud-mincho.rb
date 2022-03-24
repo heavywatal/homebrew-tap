@@ -4,7 +4,7 @@ cask "font-morisawa-biz-ud-mincho" do
 
   url "https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v#{version}/morisawa-biz-ud-mincho-fonts.zip"
   name "Morisawa BIZ UDMincho"
-  desc "BIZ UD Mincho is a universal design typeface designed to be easy to read and ideal for education and business documentation."
+  desc "Universal design typeface designed to be easy to read"
   homepage "https://github.com/googlefonts/morisawa-biz-ud-mincho/"
 
   livecheck do

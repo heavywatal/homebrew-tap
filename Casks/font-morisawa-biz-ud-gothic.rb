@@ -4,7 +4,7 @@ cask "font-morisawa-biz-ud-gothic" do
 
   url "https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v#{version}/morisawa-biz-ud-gothic-fonts.zip"
   name "Morisawa BIZ UDGothic"
-  desc "BIZ UD Gothic is a universal design typeface designed to be easy to read and ideal for education and business documentation."
+  desc "Universal design typeface designed to be easy to read"
   homepage "https://github.com/googlefonts/morisawa-biz-ud-gothic/"
 
   livecheck do
