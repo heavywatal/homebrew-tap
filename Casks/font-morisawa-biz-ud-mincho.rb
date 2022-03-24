@@ -1,8 +1,8 @@
 cask "font-morisawa-biz-ud-mincho" do
-  version "1.0.0"
-  sha256 "3a54c9c6254bcfd683ba259e3a3db2d4133ec975639cf418a226b70efcbba896"
+  version "1.001"
+  sha256 "d378e752b9f670d619872d4abbd73c94568ede5f7daff7af9893b9229a3f7fb5"
 
-  url "https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v#{version}-correctedBuild/morisawa-biz-ud-mincho-fonts.zip"
+  url "https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v#{version}/morisawa-biz-ud-mincho-fonts.zip"
   name "Morisawa BIZ UDMincho"
   desc "BIZ UD Mincho is a universal design typeface designed to be easy to read and ideal for education and business documentation."
   homepage "https://github.com/googlefonts/morisawa-biz-ud-mincho/"

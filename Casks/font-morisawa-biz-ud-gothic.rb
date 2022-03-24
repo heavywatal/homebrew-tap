@@ -1,8 +1,8 @@
 cask "font-morisawa-biz-ud-gothic" do
-  version "1.0.0"
-  sha256 "409fae682d033e31601addb61754e2b14b4df4c6deeea527fddd4b523ab34d35"
+  version "1.001"
+  sha256 "b806e15c6532aacb1785e3e7f8842903f82d0262d84e3bb91d84c1a637e40513"
 
-  url "https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v#{version}-correctedBuild/morisawa-biz-ud-gothic-fonts.zip"
+  url "https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v#{version}/morisawa-biz-ud-gothic-fonts.zip"
   name "Morisawa BIZ UDGothic"
   desc "BIZ UD Gothic is a universal design typeface designed to be easy to read and ideal for education and business documentation."
   homepage "https://github.com/googlefonts/morisawa-biz-ud-gothic/"
