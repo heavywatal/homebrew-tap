@@ -1,15 +1,14 @@
 class RepeatmaskerH5 < Formula
   desc "Program that screens DNA sequences for interspersed repeats"
   homepage "https://www.repeatmasker.org/"
-  version "4.1.2"
-  url "https://www.repeatmasker.org/RepeatMasker/RepeatMasker-#{version}.tar.gz"
+  url "https://www.repeatmasker.org/RepeatMasker/RepeatMasker-4.1.2.tar.gz"
   sha256 "bb85d30a85e3462eabf7b350b4be0331c322152a6c88faab45817346d70cfdb2"
 
   depends_on "blast"
   depends_on "brewsci/bio/rmblast"
   depends_on "brewsci/bio/trf"
   depends_on "hmmer"
-  conflicts_with "repeatmasker", because: "both install 'RepeatMasker' binaries"
+  conflicts_with "brewci/bio/repeatmasker", because: "both install 'RepeatMasker' binaries"
 
   def install
     libexec.install Dir["*"]
