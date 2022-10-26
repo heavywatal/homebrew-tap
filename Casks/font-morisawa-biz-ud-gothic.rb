@@ -1,6 +1,6 @@
 cask "font-morisawa-biz-ud-gothic" do
-  version "1.001"
-  sha256 "b806e15c6532aacb1785e3e7f8842903f82d0262d84e3bb91d84c1a637e40513"
+  version "1.05"
+  sha256 "ca7c1e994b95607974e6ce07115c0e9a3d8217cde52d08a0b5d601b49c25c5fb"
 
   url "https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v#{version}/morisawa-biz-ud-gothic-fonts.zip"
   name "Morisawa BIZ UDGothic"

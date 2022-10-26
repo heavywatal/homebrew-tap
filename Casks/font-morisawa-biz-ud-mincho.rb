@@ -1,6 +1,6 @@
 cask "font-morisawa-biz-ud-mincho" do
-  version "1.001"
-  sha256 "d378e752b9f670d619872d4abbd73c94568ede5f7daff7af9893b9229a3f7fb5"
+  version "1.05"
+  sha256 "6b6a8f73e83bb07d09018a2e79d11c7e4fb65663058ccd7c1720215c2af9b75c"
 
   url "https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v#{version}/morisawa-biz-ud-mincho-fonts.zip"
   name "Morisawa BIZ UDMincho"
