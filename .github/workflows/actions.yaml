@@ -45,7 +45,6 @@ jobs:
           brew_install_test() { brew install $1 && brew test -v $1; }
           brew_install_test cxxwtl
           brew_install_test clippson
-          brew_install_test igvtools
           brew_install_test last-bin
           brew_install_test sdust
           brew_install_test sfmt-class
