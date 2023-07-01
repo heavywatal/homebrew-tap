@@ -1,5 +1,5 @@
 class Cxxwtl < Formula
-  desc "🤘 wtl: Personal C++ header library"
+  desc "Personal C++ header library"
   homepage "https://github.com/heavywatal/cxxwtl"
   url "https://github.com/heavywatal/cxxwtl/archive/v0.8.5.tar.gz"
   sha256 "ed6698e6f11256945c3cfcaa7c6fd0306abc08e06d2b29a1f0281fc8805693fe"

@@ -1,5 +1,5 @@
 class Tek2 < Formula
-  desc "🌽 Population Genetic Simulation Framework of Transposable Elements"
+  desc "Population Genetic Simulation Framework of Transposable Elements"
   homepage "https://github.com/heavywatal/tek2"
   url "https://github.com/heavywatal/tek2/archive/v0.2.1.tar.gz"
   sha256 "6de9bce36d2b363ba8d2f9752a1568f029938b8ba2aed0f98c95d86c23e58420"
