@@ -2,7 +2,7 @@ class LastBin < Formula
   desc "Auxiliary python scripts included in LAST repository"
   homepage "https://gitlab.com/mcfrith/last"
   url "https://gitlab.com/mcfrith/last/-/archive/1454/last-1454.tar.gz"
-  sha256 "d1f3dcd6bf4d0e7cdecddbbed6645fb6def8abbc9a8b98a9aa14c3ebcabfc2a4"
+  sha256 "9a47330b38876ed9e4909004216be686bb6bc67fb301c103b5ef07cacd10dc7d"
   head "https://gitlab.com/mcfrith/last.git", branch: "master"
 
   def install
