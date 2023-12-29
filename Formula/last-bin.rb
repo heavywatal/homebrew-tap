@@ -2,7 +2,8 @@ class LastBin < Formula
   desc "Auxiliary python scripts included in LAST repository"
   homepage "https://gitlab.com/mcfrith/last"
   url "https://gitlab.com/mcfrith/last.git",
-    tag: "1522"
+    tag:      "1522",
+    revision: "aad72b79"
   head "https://gitlab.com/mcfrith/last.git", branch: "main"
 
   def install
