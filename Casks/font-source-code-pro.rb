@@ -1,16 +1,18 @@
 cask "font-source-code-pro" do
-  version "2.038R-ro-1.058R-it-1.018R-VAR"
-  sha256 "87c94be199cd412e145081cf20dce1217196b47e407989465e687ebf0316af9e"
+  version "2.042R-u-1.062R-i-1.026R-vf"
+  sha256 "dd26ee6e4110b762149fef5454cb6a2fc42a0f2cd07a74b8cfc6a334a92427a6"
 
-  url "https://github.com/adobe-fonts/source-code-pro/archive/#{version.gsub(/(?<=ro)-|(?<=it)-/, "/")}.zip"
+  url "https://github.com/adobe-fonts/source-code-pro/archive/#{version.gsub(/(?<=u)-|(?<=i)-/, "/")}.zip"
   name "Source Code Pro"
   desc "Monospaced version of Source Sans Pro"
   homepage "https://github.com/adobe-fonts/source-code-pro"
 
   livecheck do
     url "https://github.com/adobe-fonts/source-code-pro/releases/latest"
-    strategy :page_match
-    regex(%r{tag/(\d+(?:\.\d+)*)}i)
+    regex(%r{tag/(\d+[\.\w/-]+)}i)
+    strategy :page_match do |page, regex|
+      page.match(regex)[1].tr("/", "-")
+    end
   end
 
   font "source-code-pro-#{version}/OTF/SourceCodePro-Black.otf"
