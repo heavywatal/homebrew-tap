@@ -29,6 +29,6 @@ cask "font-source-code-pro" do
   font "source-code-pro-#{version}/OTF/SourceCodePro-Regular.otf"
   font "source-code-pro-#{version}/OTF/SourceCodePro-Semibold.otf"
   font "source-code-pro-#{version}/OTF/SourceCodePro-SemiboldIt.otf"
-  font "source-code-pro-#{version}/VAR/SourceCodeVariable-Italic.otf"
-  font "source-code-pro-#{version}/VAR/SourceCodeVariable-Roman.otf"
+  font "source-code-pro-#{version}/VF/SourceCodeVF-Italic.otf"
+  font "source-code-pro-#{version}/VF/SourceCodeVF-Upright.otf"
 end
