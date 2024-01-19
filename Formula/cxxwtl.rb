@@ -2,7 +2,7 @@ class Cxxwtl < Formula
   desc "Personal C++ header library"
   homepage "https://github.com/heavywatal/cxxwtl"
   url "https://github.com/heavywatal/cxxwtl.git",
-      tag: "v0.8.7"
+      tag: "v0.8.8"
   head "https://github.com/heavywatal/cxxwtl.git"
 
   depends_on "cmake" => :build
@@ -28,7 +28,7 @@ class Cxxwtl < Formula
           return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-o", "test"
     system "./test"
   end
 end
