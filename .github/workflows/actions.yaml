@@ -27,7 +27,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
       - name: Cache Homebrew Bundler RubyGems
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
@@ -45,6 +45,7 @@ jobs:
           brew_install_test() { brew install $1 && brew test -v $1; }
           brew_install_test cxxwtl
           brew_install_test clippson
+          brew_install_test igraph32
           brew_install_test last-bin
           brew_install_test sdust
           brew_install_test sfmt-class
