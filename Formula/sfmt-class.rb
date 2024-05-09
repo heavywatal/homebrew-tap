@@ -8,15 +8,10 @@ class SfmtClass < Formula
   depends_on "cmake" => :build
 
   def install
-    unless File.exist?("SFMT/.git")
-      system "git", "clone", "--depth=1", "https://github.com/MersenneTwister-Lab/SFMT.git"
-    end
-    mkdir "build" do
-      cmake_args = std_cmake_args
-      cmake_args << "-DBUILD_TESTING=OFF" << ".."
-      system "cmake", *cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+           "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -32,7 +27,7 @@ class SfmtClass < Formula
           return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lsfmt", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-lsfmt", "-o", "test"
     system "./test"
   end
 end

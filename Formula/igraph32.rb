@@ -11,7 +11,7 @@ class Igraph32 < Formula
   uses_from_macos "libxml2"
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DIGRAPH_INTEGER_SIZE=32",
                     "-DIGRAPH_OPENMP_SUPPORT=OFF",
@@ -24,7 +24,7 @@ class Igraph32 < Formula
                     "-DIGRAPH_USE_INTERNAL_GMP=OFF",
                     "-DIGRAPH_USE_INTERNAL_LAPACK=OFF",
                     "-DUSE_CCACHE=OFF",
-                    "..", *std_cmake_args
+                    "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

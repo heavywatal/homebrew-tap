@@ -11,12 +11,10 @@ class Tekka < Formula
   depends_on "cxxwtl"
 
   def install
-    mkdir "build" do
-      cmake_args = std_cmake_args
-      cmake_args << "-DBUILD_TESTING=OFF" << ".."
-      system "cmake", *cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+           "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

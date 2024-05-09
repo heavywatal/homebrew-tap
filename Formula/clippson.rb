@@ -12,12 +12,10 @@ class Clippson < Formula
       system "git", "clone", "--depth=1", "https://github.com/heavywatal/clipp.git"
       system "git", "clone", "--depth=1", "https://github.com/heavywatal/json.git"
     end
-    mkdir "build" do
-      cmake_args = std_cmake_args
-      cmake_args << "-DBUILD_TESTING=OFF" << ".."
-      system "cmake", *cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+           "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
