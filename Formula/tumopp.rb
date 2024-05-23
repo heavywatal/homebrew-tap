@@ -2,13 +2,13 @@ class Tumopp < Formula
   desc "Tumor growth simulation in C++"
   homepage "https://github.com/heavywatal/tumopp"
   url "https://github.com/heavywatal/tumopp.git",
-      tag: "v0.8.6"
+      tag: "v0.8.7"
   head "https://github.com/heavywatal/tumopp.git"
 
   depends_on "cmake" => :build
   depends_on "clippson"
   depends_on "cxxwtl"
-  depends_on "sfmt-class" => :optional
+  depends_on "sfmt-class"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
