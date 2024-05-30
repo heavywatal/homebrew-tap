@@ -1,8 +1,9 @@
 class Igraph32 < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://github.com/igraph/igraph/releases/download/0.10.12/igraph-0.10.12.tar.gz"
-  sha256 "b011f7f9f38a3e59924cc9ff652e6d33105fa03fcaf3792f47d752626a0a4625"
+  url "https://github.com/igraph/igraph.git",
+      tag: "0.10.12"
+  head "https://github.com/igraph/igraph.git"
   license "GPL-2.0-or-later"
 
   depends_on "cmake" => :build
