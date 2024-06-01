@@ -46,6 +46,7 @@ jobs:
           brew_install_test cxxwtl
           brew_install_test clippson
           brew_install_test igraph32
+          brew_install_test dart-sass
           brew_install_test last-bin
           brew_install_test sdust
           brew_install_test sfmt-class
