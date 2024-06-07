@@ -6,6 +6,8 @@ class Igraph32 < Formula
   head "https://github.com/igraph/igraph.git"
   license "GPL-2.0-or-later"
 
+  conflicts_with "igraph", because: "both install igraph library"
+
   depends_on "cmake" => :build
   depends_on "glpk"
 
@@ -37,7 +39,7 @@ class Igraph32 < Formula
         igraph_real_t diameter;
         igraph_t graph;
         igraph_rng_seed(igraph_rng_default(), 42);
-        igraph_erdos_renyi_game(&graph, IGRAPH_ERDOS_RENYI_GNP, 1000, 5.0/1000, IGRAPH_UNDIRECTED, IGRAPH_NO_LOOPS);
+        igraph_erdos_renyi_game_gnp(&graph, 1000, 5.0/1000, IGRAPH_UNDIRECTED, IGRAPH_NO_LOOPS);
         igraph_diameter(&graph, &diameter, 0, 0, 0, 0, IGRAPH_UNDIRECTED, 1);
         printf("Diameter = %f\\n", (double) diameter);
         igraph_destroy(&graph);
