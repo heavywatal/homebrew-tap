@@ -2,7 +2,7 @@ class Tumopp < Formula
   desc "Tumor growth simulation in C++"
   homepage "https://github.com/heavywatal/tumopp"
   url "https://github.com/heavywatal/tumopp.git",
-      tag: "v0.8.7"
+      tag: "v0.8.7.1"
   head "https://github.com/heavywatal/tumopp.git"
 
   depends_on "cmake" => :build
