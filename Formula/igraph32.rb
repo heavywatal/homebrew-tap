@@ -3,15 +3,15 @@ class Igraph32 < Formula
   homepage "https://igraph.org/"
   url "https://github.com/igraph/igraph.git",
       tag: "0.10.13"
-  head "https://github.com/igraph/igraph.git"
   license "GPL-2.0-or-later"
-
-  conflicts_with "igraph", because: "both install igraph library"
+  head "https://github.com/igraph/igraph.git"
 
   depends_on "cmake" => :build
   depends_on "glpk"
 
   uses_from_macos "libxml2"
+
+  conflicts_with "igraph", because: "both install igraph library"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,

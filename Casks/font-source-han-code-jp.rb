@@ -1,8 +1,8 @@
 cask "font-source-han-code-jp" do
   version "2.012"
-  sha256 "bedc74973220f1ce4bb16e1fa64a46604c3164bf95b62fa48c8a046dd468d6ef"
+  sha256 "678a3bf747269c7df6fa892ed9eb050139af77f2d50ec9408d99027da88f3b4b"
 
-  url "https://github.com/adobe-fonts/source-han-code-jp/archive/#{version}R.zip"
+  url "https://github.com/adobe-fonts/source-han-code-jp/archive/refs/tags/#{version}R.tar.gz"
   name "Source Han Code JP"
   desc "Source Han Sans with fixed Latin glyphs from Source Code Pro"
   homepage "https://github.com/adobe-fonts/source-han-code-jp"
