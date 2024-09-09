@@ -2,7 +2,7 @@ class Tekka < Formula
   desc "Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/tekka"
   url "https://github.com/heavywatal/tekka.git",
-      tag: "v0.7.3"
+      tag: "v0.7.4"
   head "https://github.com/heavywatal/tekka.git"
 
   depends_on "cmake" => :build
@@ -28,7 +28,7 @@ class Tekka < Formula
           return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-ltekka", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-ltekka", "-o", "test"
     system "./test"
   end
 end
