@@ -7,7 +7,7 @@ formula=dart-sass
 prefix="https://github.com/${repo}/${formula}/releases/download"
 
 sha256() {
-  "${HERE}/sha256.sh" "${prefix}/${version}/${formula}-${version}-${arch}.tar.gz"
+  "${HERE}/sha256.bash" "${prefix}/${version}/${formula}-${version}-${arch}.tar.gz"
 }
 
 arch=macos-x64 sha256_macos_x64=$(sha256)
