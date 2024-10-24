@@ -42,6 +42,8 @@ jobs:
           brew_install_test igraph32
           brew_install_test dart-sass
           brew_install_test last-bin
+          brew_install_test pcg-cpp
+          brew_install_test pcglite
           brew_install_test sdust
           brew_install_test sfmt-class
           brew_install_test tumopp
