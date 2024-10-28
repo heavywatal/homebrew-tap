@@ -2,7 +2,7 @@ class Clippson < Formula
   desc "Helper library of clipp, command-line parser for C++"
   homepage "https://github.com/heavywatal/clippson"
   url "https://github.com/heavywatal/clippson.git",
-      tag: "v0.8.7"
+      tag: "v0.8.8"
   head "https://github.com/heavywatal/clippson.git"
 
   depends_on "cmake" => :build
@@ -20,14 +20,12 @@ class Clippson < Formula
       #include <iostream>
 
       int main(int argc, char* argv[]) {
-          bool help = false;
-          int whoami = 24601;
           nlohmann::json vm;
           auto cli = (
-            wtl::option(&vm, {"h", "help"}, false),
-            wtl::option(&vm, {"whoami"}, 24601)
+            clippson::option(&vm, {"h", "help"}, false),
+            clippson::option(&vm, {"whoami"}, 24601)
           );
-          if (!clipp::parse(argc, argv, cli)) return 1;
+          clippson::parse(cli, argc, argv);
           std::cout << vm.dump(2) << std::endl;
           return 0;
       }
