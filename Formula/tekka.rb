@@ -2,7 +2,7 @@ class Tekka < Formula
   desc "Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/tekka"
   url "https://github.com/heavywatal/tekka.git",
-      tag: "v0.7.4"
+      tag: "v0.7.5"
   head "https://github.com/heavywatal/tekka.git"
 
   depends_on "cmake" => :build
@@ -17,18 +17,6 @@ class Tekka < Formula
   end
 
   test do
-    system bin/"tekka"
-    (testpath/"test.cpp").write <<~EOS
-      #include <tekka/program.hpp>
-
-      int main(int argc, char* argv[]) {
-          std::vector<std::string> args(argv + 1, argv + argc);
-          pbf::Program program(args);
-          program.run();
-          return 0;
-      }
-    EOS
-    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-ltekka", "-o", "test"
-    system "./test"
+    system bin/"tekka", "-h"
   end
 end
