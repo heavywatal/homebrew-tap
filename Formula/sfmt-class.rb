@@ -2,7 +2,7 @@ class SfmtClass < Formula
   desc "SFMT wrapper class for C++"
   homepage "https://github.com/heavywatal/sfmt-class"
   url "https://github.com/heavywatal/sfmt-class.git",
-      tag: "v0.7.5"
+      tag: "v0.7.6"
   head "https://github.com/heavywatal/sfmt-class.git"
 
   depends_on "cmake" => :build
@@ -27,7 +27,8 @@ class SfmtClass < Formula
           return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-lsfmt", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-DSFMT_MEXP=19937",
+           "-I#{include}", "-L#{lib}", "-lsfmt", "-o", "test"
     system "./test"
   end
 end
