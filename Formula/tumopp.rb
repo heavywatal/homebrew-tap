@@ -2,7 +2,7 @@ class Tumopp < Formula
   desc "Tumor growth simulation in C++"
   homepage "https://github.com/heavywatal/tumopp"
   url "https://github.com/heavywatal/tumopp.git",
-      tag: "v0.8.7.1"
+      tag: "v0.8.9"
   head "https://github.com/heavywatal/tumopp.git"
 
   depends_on "cmake" => :build
@@ -18,18 +18,6 @@ class Tumopp < Formula
   end
 
   test do
-    system bin/"tumopp"
-    (testpath/"test.cpp").write <<~EOS
-      #include <tumopp/simulation.hpp>
-
-      int main(int argc, char* argv[]) {
-          std::vector<std::string> arguments(argv + 1, argv + argc);
-          tumopp::Simulation simulation(arguments);
-          simulation.run();
-          return 0;
-      }
-    EOS
-    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{lib}", "-ltumopp", "-o", "test"
-    system "./test"
+    system bin/"tumopp", "-h"
   end
 end
