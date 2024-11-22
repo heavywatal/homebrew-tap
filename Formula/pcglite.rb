@@ -2,7 +2,7 @@ class Pcglite < Formula
   desc "Lightweight subset of pcg-cpp, random number generator for C++"
   homepage "https://github.com/heavywatal/pcglite"
   url "https://github.com/heavywatal/pcglite.git",
-      tag: "v0.1.2"
+      tag: "v0.2.0"
   head "https://github.com/heavywatal/pcglite.git"
 
   depends_on "cmake" => :build
