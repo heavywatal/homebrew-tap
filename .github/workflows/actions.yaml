@@ -42,6 +42,7 @@ jobs:
           brew_install_test igraph32
           brew_install_test dart-sass
           brew_install_test last-bin
+          brew_install_test minimap2extra
           brew_install_test pcg-cpp
           brew_install_test pcglite
           brew_install_test sdust
