@@ -5,7 +5,8 @@ class Sdust < Formula
   sha256 "0825a760fae884e65b2b024cc4f511e32e6c1698571c147daf5a61ba0dcac589"
   head "https://github.com/lh3/sdust.git", branch: "master"
 
-  deprecate! date: "2025-03-10", because: "is superceded", replacement: "minimap2extra"
+  deprecate! date: "2025-03-10", because: "is superceded", replacement: "minimap2"
+  conflicts_with "minimap2", because: "both install sdust"
   conflicts_with "minimap2extra", because: "both install sdust"
 
   def install

@@ -10,6 +10,7 @@ class Minimap2extra < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  deprecate! date: "2025-03-10", because: "is superceded", replacement: "minimap2"
   uses_from_macos "zlib"
   conflicts_with "minimap2", because: "both install minimap2"
   conflicts_with "sdust", because: "both install sdust"
