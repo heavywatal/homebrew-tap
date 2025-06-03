@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
-HERE=$(dirname "$0")
 URL=$1
-FILE=${HERE}/${URL##*/}
-[[ -s "${FILE}" ]] || curl -LO "${URL}" --output-dir "${HERE}"
-shasum -a 256 "${FILE}" | hck -f1
+sha256url=$(echo -n "$URL" | sha256sum | hck -f1)
+FILE="$(brew --cache)/downloads/${sha256url}--${URL##*/}"
+echo "$FILE" 1>&2
+[[ -s "${FILE}" ]] || curl -L -o "${FILE}" "${URL}"
+sha256sum "${FILE}" | hck -f1
