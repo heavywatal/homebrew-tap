@@ -2,7 +2,7 @@ class Igraph32 < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
   url "https://github.com/igraph/igraph.git",
-      tag: "0.10.15"
+      tag: "0.10.16"
   license "GPL-2.0-or-later"
   head "https://github.com/igraph/igraph.git"
 
