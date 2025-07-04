@@ -21,10 +21,10 @@ class Plink2bin < Formula
   conflicts_with "plink2", because: "both install plink2"
 
   if OS.mac?
-    url "${prefix}/${version}/plink2_mac_arm64_${date}.zip"
+    url "${prefix}/${version}/plink2_mac_arm64_#{version}.zip"
     sha256 "${sha256_mac_arm64}"
   else
-    url "${prefix}/${version}/plink2_linux_avx2_${date}.zip"
+    url "${prefix}/${version}/plink2_linux_avx2_#{version}.zip"
     sha256 "${sha256_linux_avx2}"
   end
 
