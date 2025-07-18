@@ -1,8 +1,8 @@
 class Phast < Formula
   desc "Phylogenetic Analysis with Space/Time Models"
   homepage "http://compgen.cshl.edu/phast/"
-  url "https://github.com/heavywatal/phast/archive/refs/tags/v1.8.tar.gz"
-  sha256 "cf940869102cff48bdfbfab6b23c6515eae743959649903174c7e24f21d26b50"
+  url "https://github.com/heavywatal/phast/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "feb4cc07b936e8676b4f6add61e02740c72c0a647066b338be5bd508c0c1bf4b"
   head "https://github.com/heavywatal/phast.git", branch: "dev"
 
   def install
