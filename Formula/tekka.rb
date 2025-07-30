@@ -2,7 +2,7 @@ class Tekka < Formula
   desc "Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/tekka"
   url "https://github.com/heavywatal/tekka.git",
-      tag: "v0.8.1"
+      tag: "v0.8.2"
   head "https://github.com/heavywatal/tekka.git"
 
   depends_on "cmake" => :build
@@ -12,7 +12,7 @@ class Tekka < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-           "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
+           "-DHOMEBREW_ALLOW_FETCHCONTENT=ON"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
