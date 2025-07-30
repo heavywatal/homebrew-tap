@@ -3,7 +3,7 @@ class Plink2bin < Formula
   homepage "https://www.cog-genomics.org/plink/2.0/"
   version "20250701"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
-  conflicts_with "plink2", because: "both install plink2"
+  conflicts_with "brewsci/bio/plink2", because: "both install plink2"
 
   if OS.mac?
     url "https://s3.amazonaws.com/plink2-assets/alpha6/plink2_mac_arm64_#{version}.zip"
