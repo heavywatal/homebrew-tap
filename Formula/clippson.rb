@@ -2,14 +2,14 @@ class Clippson < Formula
   desc "Helper library of clipp, command-line parser for C++"
   homepage "https://github.com/heavywatal/clippson"
   url "https://github.com/heavywatal/clippson.git",
-      tag: "v0.8.8"
+      tag: "v0.8.9"
   head "https://github.com/heavywatal/clippson.git"
 
   depends_on "cmake" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-           "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
+           "-DHOMEBREW_ALLOW_FETCHCONTENT=ON"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
