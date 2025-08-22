@@ -1,16 +1,16 @@
 class Plink2bin < Formula
   desc "Whole genome association analysis toolset"
   homepage "https://www.cog-genomics.org/plink/2.0/"
-  version "20250701"
+  version "20250819"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
   conflicts_with "brewsci/bio/plink2", because: "both install plink2"
 
   if OS.mac?
     url "https://s3.amazonaws.com/plink2-assets/alpha6/plink2_mac_arm64_#{version}.zip"
-    sha256 "7970a09c1374a47d7417743feeb2267a4295b6deda14d11329a34c9e7910fce4"
+    sha256 "982a229fc8ddce1b7f58e24e009ed98b41e75735b97aa7d805f9bb1e6fe1cc8d"
   else
     url "https://s3.amazonaws.com/plink2-assets/alpha6/plink2_linux_avx2_#{version}.zip"
-    sha256 "34cff9a653dad612f68700ff898a229550ca1121884e09ad97f1621f7409ceec"
+    sha256 "ba688f529f345828e829541a9b949d67330b211525994783151819052f2b048b"
   end
 
   def install
