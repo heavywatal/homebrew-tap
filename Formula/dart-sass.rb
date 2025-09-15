@@ -6,7 +6,7 @@ class DartSass < Formula
 
   livecheck do
     url :head
-    regex(/^(\d\.[\d\.]+)$/i)
+    regex(/^(\d\.[\d.]+)$/i)
   end
 
   if OS.mac?
