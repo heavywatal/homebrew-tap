@@ -2,7 +2,7 @@ class Cxxwtl < Formula
   desc "Personal C++ header library"
   homepage "https://github.com/heavywatal/cxxwtl"
   url "https://github.com/heavywatal/cxxwtl.git",
-      tag: "v0.10.1"
+      tag: "v0.10.2"
   head "https://github.com/heavywatal/cxxwtl.git"
 
   depends_on "cmake" => :build
@@ -10,8 +10,7 @@ class Cxxwtl < Formula
   depends_on "eigen" => :optional
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-           "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
