@@ -1,13 +1,15 @@
 class Phast < Formula
   desc "Phylogenetic Analysis with Space/Time Models"
   homepage "http://compgen.cshl.edu/phast/"
-  url "https://github.com/heavywatal/phast/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "feb4cc07b936e8676b4f6add61e02740c72c0a647066b338be5bd508c0c1bf4b"
-  head "https://github.com/heavywatal/phast.git", branch: "dev"
+  url "https://github.com/heavywatal/phast/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "469c9b322b2b382e6bf493f80797f539bfbdcf1b642281d62d51c91828af884d"
+  head "https://github.com/heavywatal/phast.git", branch: "fix-complex"
+
+  fails_with gcc: "15"
 
   def install
-    inreplace "src/Makefile", "${PWD}", "#{buildpath}/src"
     cd "src" do
+      ENV.deparallelize
       system "make"
     end
     bin.install Dir["bin/*"]
