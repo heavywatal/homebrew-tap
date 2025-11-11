@@ -2,17 +2,19 @@
 set -eu
 HERE=$(dirname "$0")
 version=$1
-repo=sass
-formula=dart-sass
-prefix="https://github.com/${repo}/${formula}/releases/download"
+tag="${version}"
+repo="sass/dart-sass"
+prefix="https://github.com/${repo}/releases/download"
 
-sha256() {
-  "${HERE}/sha256.bash" "${prefix}/${version}/${formula}-${version}-${arch}.tar.gz"
+jq_digest() {
+  jq -r --arg pattern "$1" \
+    '.assets[] | select( .name | match($pattern) ) | .digest | ltrimstr("sha256:")'
 }
 
-arch=macos-x64 sha256_macos_x64=$(sha256)
-arch=macos-arm64 sha256_macos_arm64=$(sha256)
-arch=linux-x64 sha256_linux_x64=$(sha256)
+assets=$(gh release view --repo $repo "$tag" --json assets)
+sha256_macos_x64=$(echo "$assets" | jq_digest "macos-x64\.tar.gz$")
+sha256_macos_arm64=$(echo "$assets" | jq_digest "macos-arm64\.tar.gz$")
+sha256_linux_x64=$(echo "$assets" | jq_digest "linux-x64\.tar.gz$")
 
 cat >"${HERE}/../Formula/dart-sass.rb" <<EOS
 class DartSass < Formula
@@ -28,15 +30,15 @@ class DartSass < Formula
 
   if OS.mac?
     on_intel do
-      url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-macos-x64.tar.gz"
+      url "${prefix}/#{version}/dart-sass-#{version}-macos-x64.tar.gz"
       sha256 "${sha256_macos_x64}"
     end
     on_arm do
-      url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-macos-arm64.tar.gz"
+      url "${prefix}/#{version}/dart-sass-#{version}-macos-arm64.tar.gz"
       sha256 "${sha256_macos_arm64}"
     end
   else
-    url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-linux-x64.tar.gz"
+    url "${prefix}/#{version}/dart-sass-#{version}-linux-x64.tar.gz"
     sha256 "${sha256_linux_x64}"
   end
 

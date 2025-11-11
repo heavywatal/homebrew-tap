@@ -3,14 +3,18 @@ set -eu
 HERE=$(dirname "$0")
 alpha=$1
 version="2.0.0-a.${alpha}"
-prefix="https://github.com/chrchang/plink-ng/releases/download"
+tag="v${version}"
+repo="chrchang/plink-ng"
+prefix="https://github.com/${repo}/releases/download"
 
-sha256() {
-  "${HERE}/sha256.bash" "${prefix}/v${version}/plink2_${arch}.zip"
+jq_digest() {
+  jq -r --arg pattern "$1" \
+    '.assets[] | select( .name | match($pattern) ) | .digest | ltrimstr("sha256:")'
 }
 
-arch=mac_arm64 sha256_mac_arm64=$(sha256)
-arch=linux_avx2 sha256_linux_avx2=$(sha256)
+assets=$(gh release view --repo $repo "$tag" --json assets)
+sha256_mac_arm64=$(echo "$assets" | jq_digest "mac_arm64\.zip$")
+sha256_linux_avx2=$(echo "$assets" | jq_digest "linux_avx2\.zip$")
 
 cat >"${HERE}/../Formula/plink2bin.rb" <<EOS
 class Plink2bin < Formula
