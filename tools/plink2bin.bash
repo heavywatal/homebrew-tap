@@ -1,12 +1,12 @@
 #!/bin/sh
 set -eu
 HERE=$(dirname "$0")
-version=alpha6
-date=$1
-prefix="https://s3.amazonaws.com/plink2-assets"
+alpha=$1
+version="2.0.0-a.${alpha}"
+prefix="https://github.com/chrchang/plink-ng/releases/download"
 
 sha256() {
-  "${HERE}/sha256.bash" "${prefix}/${version}/plink2_${arch}_${date}.zip"
+  "${HERE}/sha256.bash" "${prefix}/v${version}/plink2_${arch}.zip"
 }
 
 arch=mac_arm64 sha256_mac_arm64=$(sha256)
@@ -16,15 +16,23 @@ cat >"${HERE}/../Formula/plink2bin.rb" <<EOS
 class Plink2bin < Formula
   desc "Whole genome association analysis toolset"
   homepage "https://www.cog-genomics.org/plink/2.0/"
-  version "${date}"
+  version "${version}"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
+
+  livecheck do
+    url :head
+    strategy :git do |tags|
+      tags.filter_map { |tag| tag[/v(2\.\d+\.\d+-[a-z0-9.]+)/i, 1] }
+    end
+  end
+
   conflicts_with "brewsci/bio/plink2", because: "both install plink2"
 
   if OS.mac?
-    url "${prefix}/${version}/plink2_mac_arm64_#{version}.zip"
+    url "${prefix}/v#{version}/plink2_mac_arm64.zip"
     sha256 "${sha256_mac_arm64}"
   else
-    url "${prefix}/${version}/plink2_linux_avx2_#{version}.zip"
+    url "${prefix}/v#{version}/plink2_linux_avx2.zip"
     sha256 "${sha256_linux_avx2}"
   end
 
