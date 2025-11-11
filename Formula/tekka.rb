@@ -12,12 +12,12 @@ class Tekka < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-           "-DHOMEBREW_ALLOW_FETCHCONTENT=ON"
+      "-DHOMEBREW_ALLOW_FETCHCONTENT=ON"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    system bin/"tekka", "-h"
+    system bin / "tekka", "-h"
   end
 end

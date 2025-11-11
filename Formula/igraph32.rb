@@ -15,24 +15,24 @@ class Igraph32 < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DIGRAPH_INTEGER_SIZE=32",
-                    "-DIGRAPH_ENABLE_LTO=AUTO",
-                    "-DIGRAPH_ENABLE_TLS=ON",
-                    "-DIGRAPH_GLPK_SUPPORT=ON",
-                    "-DIGRAPH_GRAPHML_SUPPORT=ON",
-                    "-DIGRAPH_USE_INTERNAL_BLAS=OFF",
-                    "-DIGRAPH_USE_INTERNAL_GLPK=OFF",
-                    "-DIGRAPH_USE_INTERNAL_GMP=OFF",
-                    "-DIGRAPH_USE_INTERNAL_LAPACK=OFF",
-                    "-DUSE_CCACHE=OFF",
-                    *std_cmake_args
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DIGRAPH_INTEGER_SIZE=32",
+      "-DIGRAPH_ENABLE_LTO=AUTO",
+      "-DIGRAPH_ENABLE_TLS=ON",
+      "-DIGRAPH_GLPK_SUPPORT=ON",
+      "-DIGRAPH_GRAPHML_SUPPORT=ON",
+      "-DIGRAPH_USE_INTERNAL_BLAS=OFF",
+      "-DIGRAPH_USE_INTERNAL_GLPK=OFF",
+      "-DIGRAPH_USE_INTERNAL_GMP=OFF",
+      "-DIGRAPH_USE_INTERNAL_LAPACK=OFF",
+      "-DUSE_CCACHE=OFF",
+      *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath / "test.c").write <<~EOS
       #include <igraph.h>
       int main(void) {
         igraph_real_t diameter;
@@ -45,7 +45,7 @@ class Igraph32 < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}/igraph", "-L#{lib}",
-                   "-ligraph", "-lm", "-o", "test"
+      "-ligraph", "-lm", "-o", "test"
     assert_match "Diameter = 8", shell_output("./test")
   end
 end

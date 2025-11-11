@@ -46,8 +46,8 @@ class Plink2bin < Formula
   end
 
   test do
-    system bin/"plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
-    assert_path_exists testpath/"dummy_cc1.pvar"
+    system bin / "plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
+    assert_path_exists testpath / "dummy_cc1.pvar"
   end
 end
 EOS

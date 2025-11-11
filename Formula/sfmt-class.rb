@@ -2,20 +2,20 @@ class SfmtClass < Formula
   desc "SFMT wrapper class for C++"
   homepage "https://github.com/heavywatal/sfmt-class"
   url "https://github.com/heavywatal/sfmt-class.git",
-      tag: "v0.7.6"
+    tag: "v0.7.6"
   head "https://github.com/heavywatal/sfmt-class.git"
 
   depends_on "cmake" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-           "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
+      "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath / "test.cpp").write <<~EOS
       #include <sfmt.hpp>
       #include <random>
 
@@ -28,7 +28,7 @@ class SfmtClass < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++17", "-DSFMT_MEXP=19937",
-           "-I#{include}", "-L#{lib}", "-lsfmt", "-o", "test"
+      "-I#{include}", "-L#{lib}", "-lsfmt", "-o", "test"
     system "./test"
   end
 end

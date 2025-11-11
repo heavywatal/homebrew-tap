@@ -26,7 +26,7 @@ class DartSass < Formula
   def install
     libexec.install "sass"
     libexec.install "src"
-    bin.install_symlink libexec/"sass"
+    bin.install_symlink libexec / "sass"
   end
 
   test do

@@ -2,7 +2,7 @@ class Cxxwtl < Formula
   desc "Personal C++ header library"
   homepage "https://github.com/heavywatal/cxxwtl"
   url "https://github.com/heavywatal/cxxwtl.git",
-      tag: "v0.10.2"
+    tag: "v0.10.2"
   head "https://github.com/heavywatal/cxxwtl.git"
 
   depends_on "cmake" => :build
@@ -16,7 +16,7 @@ class Cxxwtl < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath / "test.cpp").write <<~EOS
       #include <wtl/exception.hpp>
       #include <wtl/math.hpp>
 

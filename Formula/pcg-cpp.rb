@@ -2,9 +2,9 @@ class PcgCpp < Formula
   desc "PCG Random Number Generation, C++ Edition"
   homepage "https://www.pcg-random.org"
   url "https://github.com/heavywatal/pcg-cpp.git",
-      tag: "v0.98.1"
+    tag: "v0.98.1"
   head "https://github.com/heavywatal/pcg-cpp.git",
-      branch: "cmake"
+    branch: "cmake"
 
   depends_on "cmake" => :build
 
@@ -15,7 +15,7 @@ class PcgCpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath / "test.cpp").write <<~EOS
       #include <pcg/pcg_random.hpp>
       #include <iostream>
       #include <random>

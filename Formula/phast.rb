@@ -18,6 +18,6 @@ class Phast < Formula
   end
 
   test do
-    system bin/"phastCons", "-h"
+    system bin / "phastCons", "-h"
   end
 end
