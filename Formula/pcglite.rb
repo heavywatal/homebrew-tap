@@ -1,8 +1,8 @@
 class Pcglite < Formula
   desc "Lightweight subset of pcg-cpp, random number generator for C++"
   homepage "https://github.com/heavywatal/pcglite"
-  url "https://github.com/heavywatal/pcglite.git",
-    tag: "v0.2.1"
+  url "https://github.com/heavywatal/pcglite/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "f082db23389a653630a9596704bdea9e587486a2cb3a100e106529a4de7b0193"
   head "https://github.com/heavywatal/pcglite.git"
 
   depends_on "cmake" => :build
