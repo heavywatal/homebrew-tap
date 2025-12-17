@@ -1,7 +1,7 @@
 class DartSass < Formula
   desc "Dart implementation of Sass"
   homepage "https://sass-lang.com/dart-sass/"
-  version "1.96.0"
+  version "1.97.0"
   head "https://github.com/sass/dart-sass.git"
 
   livecheck do
@@ -12,15 +12,15 @@ class DartSass < Formula
   if OS.mac?
     on_intel do
       url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-macos-x64.tar.gz"
-      sha256 "01c6b4fbdda895cdb991723f0b3743fefbfcc95ad60efe2e0a2d84eed7bfc0fc"
+      sha256 "9af93cc045b104f12075ce3edfc6f4f8330b391ee6f51472839bc1f030d4773d"
     end
     on_arm do
       url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-macos-arm64.tar.gz"
-      sha256 "f2815edafe1476f8fab02d4e9af23fd9e8a43f68ab352ae196fbae7d1090a3b7"
+      sha256 "5f97c95cbec8dcd2209b0c6be0d12c443a393213c41d3bafee72533999d31e0c"
     end
   else
     url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-linux-x64.tar.gz"
-    sha256 "b03812b0b14da413d02bb27f41ec0bd7c0a722709665717b0f86f66ca759f900"
+    sha256 "6fb01112aef15cc07c5a4cee789f5c746d0c7732213e9fcc250e06ad25cbf317"
   end
 
   def install
