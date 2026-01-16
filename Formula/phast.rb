@@ -9,7 +9,8 @@ class Phast < Formula
   depends_on "pcre" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
