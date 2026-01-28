@@ -13,6 +13,9 @@ cask "jbrowse2" do
     strategy :github_latest
   end
 
+  deprecate! date: "2026-01-28", because: "is superceded", replacement: "jbrowse"
+
+  conflicts_with cask: "jbrowse"
   depends_on macos: ">= :monterey"
 
   app "JBrowse 2.app"
