@@ -1,6 +1,6 @@
 cask "jbrowse2" do
-  version "4.1.3"
-  sha256 "b07faf9e28790a581dfe57a70c1fbd8535a74f1546c84e4d98ae822d675fe536"
+  version "4.1.13"
+  sha256 "8e2988d097b536745ece3886d75c6e7e9e06c72d1179ef772d2bc97846d7949f"
 
   url "https://github.com/GMOD/jbrowse-components/releases/download/v#{version}/jbrowse-desktop-v#{version}-mac.dmg",
       verified: "github.com/GMOD/jbrowse-components/"
@@ -13,7 +13,7 @@ cask "jbrowse2" do
     strategy :github_latest
   end
 
-  deprecate! date: "2026-01-28", because: "is superceded", replacement: "jbrowse"
+  deprecate! date: "2026-01-28", because: "is superceded", replacement_formula: "jbrowse"
 
   conflicts_with cask: "jbrowse"
   depends_on macos: ">= :monterey"
