@@ -13,6 +13,10 @@ cask "font-source-han-code-jp" do
     regex(%r{tag/(\d+(?:\.\d+)*)}i)
   end
 
+  deprecate! date: "2026-03-04", because: "is superceded", replacement_formula: "font-source-han-code-jp"
+
+  conflicts_with cask: "font-source-han-code-jp"
+
   font "source-han-code-jp-#{version}R/OTF/SourceHanCodeJP-Bold.otf"
   font "source-han-code-jp-#{version}R/OTF/SourceHanCodeJP-BoldIt.otf"
   font "source-han-code-jp-#{version}R/OTF/SourceHanCodeJP-ExtraLight.otf"

@@ -16,5 +16,9 @@ cask "font-source-han-sans" do
     regex(%r{tag/(\d+(?:\.\d+)*)}i)
   end
 
+  deprecate! date: "2026-03-04", because: "is superceded", replacement_formula: "font-source-han-sans-vf"
+
+  conflicts_with cask: "font-source-han-sans-vf"
+
   font "SourceHanSans.ttc"
 end
