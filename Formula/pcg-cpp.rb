@@ -1,10 +1,10 @@
 class PcgCpp < Formula
   desc "PCG Random Number Generation, C++ Edition"
   homepage "https://www.pcg-random.org"
-  url "https://github.com/heavywatal/pcg-cpp.git",
-    tag: "v0.98.1"
   head "https://github.com/heavywatal/pcg-cpp.git",
     branch: "cmake"
+
+  deprecate! date: "2026-03-04", because: :deprecated_upstream
 
   depends_on "cmake" => :build
 
