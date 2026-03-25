@@ -24,9 +24,11 @@ class DartSass < Formula
   end
 
   def install
-    libexec.install "sass"
-    libexec.install "src"
-    bin.install_symlink libexec / "sass"
+    libexec.install Dir["src/*"]
+    (bin/"sass").write <<~EOS
+      #!/bin/sh
+      exec "#{libexec}/dart" "#{libexec}/sass.snapshot" "1.98.0"
+    EOS
   end
 
   test do
