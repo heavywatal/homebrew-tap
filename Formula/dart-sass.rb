@@ -1,7 +1,7 @@
 class DartSass < Formula
   desc "Dart implementation of Sass"
   homepage "https://sass-lang.com/dart-sass/"
-  version "1.98.0"
+  version "1.99.0"
   head "https://github.com/sass/dart-sass.git"
 
   livecheck do
@@ -12,22 +12,22 @@ class DartSass < Formula
   if OS.mac?
     on_intel do
       url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-macos-x64.tar.gz"
-      sha256 "a11a8ab98fb15ccc87589458383248135c078db6fa99103fbb36431f0f583938"
+      sha256 "df0ed53ae883d3f8007864b2a7f52e6462d4824478339fd9ea6cfe92cd0f0fad"
     end
     on_arm do
       url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-macos-arm64.tar.gz"
-      sha256 "7a477af01b77c69fbf38335169e5d181b5193c8588c2400d8e3b806883e267b0"
+      sha256 "66c7dd63cce6ef575453048124b8a9dc111f31749556160063531959a32a8ccb"
     end
   else
     url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-linux-x64.tar.gz"
-    sha256 "63340034916b39088e81008e77a93057f88013ea842821babdbb9979751de847"
+    sha256 "f0a32ab99bc0a1eb62ea7140a056a1bca82d534390b7c3dba4f2016eb0077753"
   end
 
   def install
     libexec.install Dir["src/*"]
     (bin/"sass").write <<~EOS
       #!/bin/sh
-      exec "#{libexec}/dart" "#{libexec}/sass.snapshot" "1.98.0"
+      exec "#{libexec}/dart" "#{libexec}/sass.snapshot" "$@"
     EOS
   end
 

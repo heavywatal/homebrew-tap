@@ -46,7 +46,7 @@ class DartSass < Formula
     libexec.install Dir["src/*"]
     (bin/"sass").write <<~EOS
       #!/bin/sh
-      exec "#{libexec}/dart" "#{libexec}/sass.snapshot" "$@"
+      exec "#{libexec}/dart" "#{libexec}/sass.snapshot" "\$@"
     EOS
   end
 
