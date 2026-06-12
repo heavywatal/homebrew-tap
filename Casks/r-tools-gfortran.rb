@@ -12,6 +12,8 @@ cask "r-tools-gfortran" do
     regex(/href=.*?gfortran[._-](\d+(?:\.\d+)*)([._-]universal)?\.pkg/i)
   end
 
+  depends_on :macos
+
   pkg "gfortran-#{version}-universal.pkg"
 
   uninstall pkgutil: "org.r-project.universal.gfortran"
