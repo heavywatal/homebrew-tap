@@ -9,6 +9,9 @@ class DartSass < Formula
     regex(/^(\d\.[\d.]+)$/i)
   end
 
+  deprecate! date: "2026-04-09", because: "is superseded", replacement: "dart-sass"
+  conflicts_with "dart-sass", because: "both install sass"
+
   if OS.mac?
     on_intel do
       url "https://github.com/sass/dart-sass/releases/download/#{version}/dart-sass-#{version}-macos-x64.tar.gz"
