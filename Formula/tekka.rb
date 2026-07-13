@@ -1,8 +1,8 @@
 class Tekka < Formula
   desc "Individual-based simulator of pacific bluefin tuna"
   homepage "https://github.com/heavywatal/tekka"
-  url "https://github.com/heavywatal/tekka/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "40f7f751fd5aae734c24440cc77180eac7873163a05cd1b790a66c8650492de6"
+  url "https://github.com/heavywatal/tekka/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "d74e7e9e94d770ff9fff570c3ff31dfd5170ed0aa422ccf99964889d0e6c1f16"
   head "https://github.com/heavywatal/tekka.git"
 
   depends_on "cmake" => :build
