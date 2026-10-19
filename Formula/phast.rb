@@ -1,9 +1,9 @@
 class Phast < Formula
   desc "Phylogenetic Analysis with Space/Time Models"
   homepage "http://compgen.cshl.edu/phast/"
-  url "https://github.com/heavywatal/phast/archive/refs/tags/v1.9.7.tar.gz"
-  sha256 "78b86fc4234444ed15010c33208cfe48313205962f498bcfe91ece0dd1876892"
-  head "https://github.com/heavywatal/phast.git", branch: "version-1.9.7"
+  url "https://github.com/CshlSiepelLab/phast/archive/refs/tags/v1.9.9.tar.gz"
+  sha256 "ef9fd7c6e6c02e866162cf41ff372559f105ae3f9c4dc8562103533e41f1b069"
+  head "https://github.com/CshlSiepelLab/phast.git"
 
   depends_on "cmake" => :build
   depends_on "pcre" => :build
