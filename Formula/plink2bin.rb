@@ -1,7 +1,7 @@
 class Plink2bin < Formula
   desc "Whole genome association analysis toolset"
   homepage "https://www.cog-genomics.org/plink/2.0/"
-  version "2.0.0-a.7.8"
+  version "2.0.0-a.7.13"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
   livecheck do
@@ -15,10 +15,10 @@ class Plink2bin < Formula
 
   if OS.mac?
     url "https://github.com/chrchang/plink-ng/releases/download/v#{version}/plink2_mac_arm64.zip"
-    sha256 "04be4b865ad4b79a61b61ba2eb7468b4dbf62674dc5f7c94484fe0e5471539e4"
+    sha256 "9dbe19b968425eeabff206551235c0f24de6c97da29eb6c20a5a33c992436a54"
   else
     url "https://github.com/chrchang/plink-ng/releases/download/v#{version}/plink2_linux_avx2.zip"
-    sha256 "2a60455832bb38ed147452e18ad3240cdef928dd867779e49574cc0700fb6f6c"
+    sha256 "0ea8726f489a3b2fb5396137f4531b11430a8bc2dbdeb8e764f1d490d196e759"
   end
 
   def install
