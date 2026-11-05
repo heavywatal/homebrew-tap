@@ -30,7 +30,7 @@ class Plink2bin < Formula
     end
   end
 
-  conflicts_with "brewsci/bio/plink2", because: "both install plink2"
+  conflicts_with "plink-ng", because: "both install plink2"
 
   if OS.mac?
     url "${prefix}/v#{version}/plink2_mac_arm64.zip"
