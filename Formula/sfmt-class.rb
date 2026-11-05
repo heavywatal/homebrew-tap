@@ -1,8 +1,8 @@
 class SfmtClass < Formula
   desc "SFMT wrapper class for C++"
   homepage "https://github.com/heavywatal/sfmt-class"
-  url "https://github.com/heavywatal/sfmt-class.git",
-    tag: "v0.7.6"
+  url "https://github.com/heavywatal/sfmt-class/archive/refs/tags/v0.7.6.tar.gz"
+  sha256 "fd4a17a88711a2b5283529d38aadfe16c81830c8aa66652334923137adaf6d17"
   head "https://github.com/heavywatal/sfmt-class.git"
 
   depends_on "cmake" => :build
