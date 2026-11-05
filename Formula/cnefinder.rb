@@ -1,9 +1,8 @@
 class Cnefinder < Formula
   desc "Finding Conserved Non-coding Elements in Genomes"
   homepage "https://github.com/lorrainea/CNEFinder"
-  url "https://github.com/heavywatal/CNEFinder.git",
-    tag: "v0.1.1"
-  sha256 "19adaf43f30ede4d1c243fbf04f67cc9711c640047a519c2f265d067b38a682d"
+  url "https://github.com/heavywatal/CNEFinder/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "24246c09c27aec7bc1836a31b511138429881e0ee69ebf4fe4d7c1fd1d5ffa5b"
   head "https://github.com/heavywatal/CNEFinder.git"
 
   depends_on "boost" => :build
