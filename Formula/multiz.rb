@@ -1,8 +1,8 @@
 class Multiz < Formula
   desc "DNA multiple sequence aligner"
   homepage "https://www.bx.psu.edu/miller_lab/"
-  url "https://github.com/heavywatal/multiz/archive/refs/tags/v11.6.1.tar.gz"
-  sha256 "3144ed087008582727f9ee2b99cae44bf76cf10578a48c7692b252008ad3c9aa"
+  url "https://github.com/heavywatal/multiz/archive/refs/tags/v11.9.1.tar.gz"
+  sha256 "0e7ccc8cc4f269a48ade32ee85ff37d438f66799e804732f2fe2f5c4ca26ae20"
   head "https://github.com/heavywatal/multiz.git", branch: "custom"
 
   def install
